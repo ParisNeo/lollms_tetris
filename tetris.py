@@ -39,13 +39,14 @@ SHAPES = [
 class AudioManager:
     def __init__(self):
         pygame.mixer.init()
-        self.sounds = {
-            'rotate': pygame.mixer.Sound('assets/rotate.wav'),
-            'clear': pygame.mixer.Sound('assets/clear.wav'),
-            'drop': pygame.mixer.Sound('assets/drop.wav'),
-            'gameover': pygame.mixer.Sound('assets/gameover.wav')
-        }
-        
+
+        # self.sounds = {
+        #     'rotate': pygame.mixer.Sound('assets/rotate.wav'),
+        #     'clear': pygame.mixer.Sound('assets/clear.wav'),
+        #     'drop': pygame.mixer.Sound('assets/drop.wav'),
+        #     'gameover': pygame.mixer.Sound('assets/gameover.wav')
+        # }
+        self.sounds = {}
     def play_sound(self, sound_name):
         if sound_name in self.sounds:
             self.sounds[sound_name].play()
@@ -83,9 +84,9 @@ class Menu:
         start = self.font.render('Press ENTER to Start', True, COLORS['WHITE'])
         quit = self.font.render('Press Q to Quit', True, COLORS['WHITE'])
         
-        self.screen.blit(title, (CONFIG['WINDOW_WIDTH']//2 - title.get_width()//2, 200))
-        self.screen.blit(start, (CONFIG['WINDOW_WIDTH']//2 - start.get_width()//2, 300))
-        self.screen.blit(quit, (CONFIG['WINDOW_WIDTH']//2 - quit.get_width()//2, 400))
+        self.screen.blit(title, (CONFIG['window']['width']//2 - title.get_width()//2, 200))
+        self.screen.blit(start, (CONFIG['window']['width']//2 - start.get_width()//2, 300))
+        self.screen.blit(quit, (CONFIG['window']['width']//2 - quit.get_width()//2, 400))
         
     def draw_game_over(self, score):
         self.screen.fill(COLORS['BLACK'])
@@ -93,13 +94,13 @@ class Menu:
         score_text = self.font.render(f'Score: {score}', True, COLORS['WHITE'])
         restart = self.font.render('Press R to Restart', True, COLORS['WHITE'])
         
-        self.screen.blit(game_over, (CONFIG['WINDOW_WIDTH']//2 - game_over.get_width()//2, 200))
-        self.screen.blit(score_text, (CONFIG['WINDOW_WIDTH']//2 - score_text.get_width()//2, 300))
-        self.screen.blit(restart, (CONFIG['WINDOW_WIDTH']//2 - restart.get_width()//2, 400))
+        self.screen.blit(game_over, (CONFIG['window']['width']//2 - game_over.get_width()//2, 200))
+        self.screen.blit(score_text, (CONFIG['window']['width']//2 - score_text.get_width()//2, 300))
+        self.screen.blit(restart, (CONFIG['window']['width']//2 - restart.get_width()//2, 400))
 
 class TetrisGame:
     def __init__(self):
-        self.screen = pygame.display.set_mode((CONFIG['WINDOW_WIDTH'], CONFIG['WINDOW_HEIGHT']))
+        self.screen = pygame.display.set_mode((CONFIG['window']['width'], CONFIG['window']['height']))
         pygame.display.set_caption('Tetris')
         
         self.clock = pygame.time.Clock()
