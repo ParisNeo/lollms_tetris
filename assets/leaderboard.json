@@ -1,0 +1,41 @@
+{
+  "high_scores": [
+    {
+      "player_name": "ParisNeo",
+      "score": 10000,
+      "date": "2023-12-25",
+      "lines_cleared": 45,
+      "level_reached": 5
+    },
+    {
+      "player_name": "Player1",
+      "score": 8500,
+      "date": "2023-12-24",
+      "lines_cleared": 38,
+      "level_reached": 4
+    },
+    {
+      "player_name": "Player2", 
+      "score": 7200,
+      "date": "2023-12-23",
+      "lines_cleared": 32,
+      "level_reached": 4
+    },
+    {
+      "player_name": "Player3",
+      "score": 6400,
+      "date": "2023-12-22", 
+      "lines_cleared": 28,
+      "level_reached": 3
+    },
+    {
+      "player_name": "Player4",
+      "score": 5100,
+      "date": "2023-12-21",
+      "lines_cleared": 23,
+      "level_reached": 3
+    }
+  ],
+  "last_update": "2023-12-25",
+  "total_games_played": 42
+}
